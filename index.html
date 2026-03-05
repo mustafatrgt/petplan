@@ -2170,6 +2170,9 @@
             tooltip.style.transform = 'translateY(10px)';
         }
 
+        // Hide tooltip on scroll to prevent it from floating disconnected
+        window.addEventListener('scroll', hideChartTooltip, { passive: true });
+
         function moveChartTooltip(e) {
             const tooltip = document.getElementById('chart-tooltip');
             tooltip.style.left = e.clientX + 15 + 'px';
