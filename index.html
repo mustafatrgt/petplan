@@ -217,40 +217,25 @@
             scrollbar-color: rgba(236, 91, 19, 0.45) transparent;
         }
 
-        /* Scrollbar track: offset to start after sticky column (~110px) */
-        /* Custom Scrollbar for Desktop only */
-        @media (min-width: 768px) {
-            .modern-table-container::-webkit-scrollbar {
-                height: 5px;
-            }
-
-            .modern-table-container::-webkit-scrollbar-track {
-                background: transparent;
-                margin-left: 110px;
-                border-radius: 99px;
-            }
-
-            .modern-table-container::-webkit-scrollbar-thumb {
-                background-color: rgba(236, 91, 19, 0.45);
-                border-radius: 99px;
-                border: 1px solid transparent;
-            }
-
-            .modern-table-container::-webkit-scrollbar-thumb:hover {
-                background-color: rgba(236, 91, 19, 0.7);
-            }
+        /* Custom Scrollbar for all devices (offset to start after sticky column ~110px) */
+        .modern-table-container::-webkit-scrollbar {
+            height: 5px;
         }
 
-        /* Hide Scrollbar completely on Mobile - rely on swipe hint */
-        @media (max-width: 767px) {
-            .modern-table-container::-webkit-scrollbar {
-                display: none;
-            }
+        .modern-table-container::-webkit-scrollbar-track {
+            background: transparent;
+            margin-left: 110px;
+            border-radius: 99px;
+        }
 
-            .modern-table-container {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
+        .modern-table-container::-webkit-scrollbar-thumb {
+            background-color: rgba(236, 91, 19, 0.45);
+            border-radius: 99px;
+            border: 1px solid transparent;
+        }
+
+        .modern-table-container::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(236, 91, 19, 0.7);
         }
 
         .table-scroll-hint {
