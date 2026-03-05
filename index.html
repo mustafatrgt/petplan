@@ -108,14 +108,20 @@
 
         .modern-table th {
             padding: 1.5rem 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-size: 0.75rem;
-            background: rgba(255, 255, 255, 0.3);
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
-            color: inherit;
-            text-align: center;
+            letter-spacing: 0.06em;
+            font-size: 0.8rem;
+            background: rgba(236, 91, 19, 0.07);
+            border-bottom: 1.5px solid rgba(236, 91, 19, 0.15);
+            color: #ec5b13;
+            text-align: left;
+        }
+
+        .dark .modern-table th {
+            background: rgba(236, 91, 19, 0.1);
+            border-bottom: 1.5px solid rgba(236, 91, 19, 0.2);
+            color: #f87340;
         }
 
         .modern-table th:first-child,
@@ -140,11 +146,11 @@
         }
 
         .modern-table th:first-child {
-            background: #fdfcfb;
+            background: rgba(236, 91, 19, 0.05);
         }
 
         .dark .modern-table th:first-child {
-            background: #1e293b;
+            background: rgba(236, 91, 19, 0.12);
         }
 
         .modern-table tr:nth-child(even) td:first-child {
@@ -164,7 +170,7 @@
         }
 
         .modern-table td {
-            text-align: center;
+            text-align: left;
             padding: 1.5rem 1.5rem;
             border-bottom: 0.5px solid rgba(0, 0, 0, 0.03);
             transition: background 0.2s ease;
