@@ -177,6 +177,20 @@
             transition: background 0.2s ease;
         }
 
+        /* Donut Chart Interactions */
+        .chart-segment {
+            pointer-events: stroke;
+            /* Only trigger hover on the visible colored stroke */
+            transition: stroke-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+        }
+
+        .chart-segment:hover {
+            stroke-width: 15;
+            /* Expands outwards slightly */
+            filter: brightness(1.1) drop-shadow(0 0 4px currentColor);
+            z-index: 10;
+        }
+
         .modern-table td:last-child {
             border-right: none;
         }
