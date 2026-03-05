@@ -219,19 +219,26 @@
 
         /* Custom Scrollbar for all devices (offset to start after sticky column ~110px) */
         .modern-table-container::-webkit-scrollbar {
-            height: 5px;
+            height: 15px;
+            /* Needs to be larger to accommodate the top border */
         }
 
         .modern-table-container::-webkit-scrollbar-track {
             background: transparent;
-            margin-left: 110px;
-            border-radius: 99px;
+            /* Use a massive transparent left border to push the track to the right */
+            border-left: 110px solid transparent;
+            /* Adds a small spacer so thumb doesn't touch the table completely */
+            border-top: 10px solid transparent;
+            background-clip: padding-box;
         }
 
         .modern-table-container::-webkit-scrollbar-thumb {
             background-color: rgba(236, 91, 19, 0.45);
+            /* Match the track's push */
+            border-left: 110px solid transparent;
+            border-top: 10px solid transparent;
             border-radius: 99px;
-            border: 1px solid transparent;
+            background-clip: padding-box;
         }
 
         .modern-table-container::-webkit-scrollbar-thumb:hover {
