@@ -121,18 +121,45 @@
         .modern-table th:first-child,
         .modern-table td:first-child {
             text-align: left;
+            position: sticky;
+            left: 0;
+            z-index: 20;
+            background: white;
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .modern-table th:first-child,
+        .dark .modern-table td:first-child {
+            background: #0f172a;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modern-table th:first-child {
+            background: #fdfcfb;
+        }
+
+        .dark .modern-table th:first-child {
+            background: #1e293b;
+        }
+
+        .modern-table tr:nth-child(even) td:first-child {
+            background: #f9f9f9 !important;
+        }
+
+        .dark .modern-table tr:nth-child(even) td:first-child {
+            background: #1a1a1a !important;
+        }
+
+        .modern-table tr:hover td:first-child {
+            background: #f0f0f0 !important;
+        }
+
+        .dark .modern-table tr:hover td:first-child {
+            background: #2a2a2a !important;
         }
 
         .modern-table td {
             text-align: center;
-        }
-
-        .dark .modern-table th {
-            background: rgba(0, 0, 0, 0.2);
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .modern-table td {
             padding: 1.5rem 1.5rem;
             border-bottom: 0.5px solid rgba(0, 0, 0, 0.03);
             transition: background 0.2s ease;
