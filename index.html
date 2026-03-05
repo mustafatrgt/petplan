@@ -267,6 +267,17 @@
             transform: translateX(0);
         }
 
+        #mobile-menu-backdrop {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        #mobile-menu-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         #chart-tooltip {
             position: fixed;
             pointer-events: none;
@@ -373,42 +384,70 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 z-[100] bg-white dark:bg-background-dark p-8 md:hidden flex flex-col">
-            <div class="flex justify-between items-center mb-10">
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary text-3xl">pets</span>
-                    <span
-                        class="text-xl font-extrabold tracking-tight uppercase text-slate-900 dark:text-white">PetPlanHero</span>
-                </div>
-                <button class="p-2 text-slate-900 dark:text-white" onclick="toggleMobileMenu()">
-                    <span class="material-symbols-outlined text-3xl">close</span>
-                </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 z-[90] bg-slate-900/40 backdrop-blur-sm md:hidden"
+        onclick="toggleMobileMenu()"></div>
+    <div id="mobile-menu"
+        class="fixed right-0 top-0 bottom-0 w-[300px] z-[100] bg-white dark:bg-slate-900 p-8 md:hidden flex flex-col shadow-2xl overflow-y-auto">
+        <div class="flex justify-between items-center mb-10">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+                <span
+                    class="text-xl font-extrabold tracking-tight uppercase text-slate-900 dark:text-white">PetPlanHero</span>
             </div>
-            <nav class="flex flex-col gap-5 overflow-y-auto pb-8">
-                <a class="text-xl font-bold hover:text-primary transition-colors text-slate-900 dark:text-white flex justify-between items-center"
-                    href="#comparison" onclick="toggleMobileMenu()">Comparison <span
-                        class="material-symbols-outlined text-slate-300">chevron_right</span></a>
-                <a class="text-xl font-bold hover:text-primary transition-colors text-slate-900 dark:text-white flex justify-between items-center"
-                    href="#how-it-works" onclick="toggleMobileMenu()">How it Works <span
-                        class="material-symbols-outlined text-slate-300">chevron_right</span></a>
-                <a class="text-xl font-bold hover:text-primary transition-colors text-slate-900 dark:text-white flex justify-between items-center"
-                    href="#coverage" onclick="toggleMobileMenu()">Coverage <span
-                        class="material-symbols-outlined text-slate-300">chevron_right</span></a>
-                <a class="text-xl font-bold hover:text-primary transition-colors text-slate-900 dark:text-white flex justify-between items-center"
-                    href="#methodology" onclick="toggleMobileMenu()">Methodology <span
-                        class="material-symbols-outlined text-slate-300">chevron_right</span></a>
-                <div class="mt-4 pt-10 border-t border-slate-100 dark:border-slate-800">
-                    <button
-                        class="w-full bg-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-primary/20">
-                        Compare Top Plans
-                    </button>
-                    <p class="mt-6 text-center text-xs text-slate-400 font-medium">Joined by 12,000+ users this month
-                    </p>
-                </div>
-            </nav>
+            <button
+                class="p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+                onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
         </div>
+        <nav class="flex flex-col gap-2">
+            <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
+                href="#comparison" onclick="toggleMobileMenu()">
+                Comparison
+                <span
+                    class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </a>
+            <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
+                href="#how-it-works" onclick="toggleMobileMenu()">
+                How it Works
+                <span
+                    class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </a>
+            <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
+                href="#coverage" onclick="toggleMobileMenu()">
+                Coverage
+                <span
+                    class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </a>
+            <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
+                href="#methodology" onclick="toggleMobileMenu()">
+                Methodology
+                <span
+                    class="material-symbols-outlined text-slate-300 group-hover:translate-x-1 transition-transform">chevron_right</span>
+            </a>
+
+            <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
+                <button
+                    class="w-full bg-primary text-white px-6 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform active:scale-95">
+                    Compare Top Plans
+                </button>
+                <div class="mt-6 flex flex-col items-center gap-2">
+                    <p class="text-xs text-slate-400 font-medium">Joined by 12,000+ users this month</p>
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200">
+                        </div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300">
+                        </div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 bg-slate-400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
     </header>
     <!-- Hero Section -->
     <section class="relative py-20 overflow-hidden animate-on-scroll">
@@ -1834,6 +1873,8 @@
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('open');
+            document.getElementById('mobile-menu-backdrop').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('mobile-menu').classList.contains('open') ? 'hidden' : '';
         }
 
         // Mouse Spotlight
