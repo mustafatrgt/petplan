@@ -35,6 +35,16 @@
             transition: background-color 0.5s ease, color 0.5s ease;
         }
 
+        .icon-symbol {
+            width: 1em;
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            fill: currentColor;
+            font-size: 24px;
+            /* Restores Material Symbols default size */
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px) saturate(180%);
@@ -357,7 +367,7 @@
         class="sticky top-0 z-50 bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 glass-card">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                <svg class=" text-primary text-3xl icon-symbol">
                     <use href="assets/img/sprite.svg#pets"></use>
                 </svg>
                 <span
@@ -375,11 +385,10 @@
                 <button
                     class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mr-2 flex items-center justify-center btn-hover transition-all"
                     onclick="document.documentElement.classList.toggle('dark')">
-                    <svg class=" dark:hidden fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <svg class=" dark:hidden icon-symbol">
                         <use href="assets/img/sprite.svg#dark_mode"></use>
                     </svg>
-                    <svg
-                        class=" hidden dark:block text-yellow-400 fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <svg class=" hidden dark:block text-yellow-400 icon-symbol">
                         <use href="assets/img/sprite.svg#light_mode"></use>
                     </svg>
                 </button>
@@ -388,7 +397,7 @@
                     Compare Plans
                 </button>
                 <button class="ml-4 md:hidden p-2 text-slate-900 dark:text-white" onclick="toggleMobileMenu()">
-                    <svg class=" text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <svg class=" text-3xl icon-symbol">
                         <use href="assets/img/sprite.svg#menu"></use>
                     </svg>
                 </button>
@@ -403,7 +412,7 @@
         class="fixed right-0 top-0 bottom-0 w-[300px] z-[100] bg-white dark:bg-slate-900 p-8 md:hidden flex flex-col shadow-2xl overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
             <div class="flex items-center gap-2">
-                <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                <svg class=" text-primary text-3xl icon-symbol">
                     <use href="assets/img/sprite.svg#pets"></use>
                 </svg>
                 <span
@@ -412,7 +421,7 @@
             <button
                 class="p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
                 onclick="toggleMobileMenu()">
-                <svg class=" text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                <svg class=" text-3xl icon-symbol">
                     <use href="assets/img/sprite.svg#close"></use>
                 </svg>
             </button>
@@ -421,22 +430,30 @@
             <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
                 href="#comparison" onclick="toggleMobileMenu()">
                 Comparison
-                <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                <svg class="icon-symbol">
+                    <use href="assets/img/sprite.svg#chevron_right"></use>
+                </svg>
             </a>
             <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
                 href="#how-it-works" onclick="toggleMobileMenu()">
                 How it Works
-                <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                <svg class="icon-symbol">
+                    <use href="assets/img/sprite.svg#chevron_right"></use>
+                </svg>
             </a>
             <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
                 href="#coverage" onclick="toggleMobileMenu()">
                 Coverage
-                <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                <svg class="icon-symbol">
+                    <use href="assets/img/sprite.svg#chevron_right"></use>
+                </svg>
             </a>
             <a class="p-4 text-lg font-bold hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-xl transition-all text-slate-900 dark:text-white flex justify-between items-center group"
                 href="#methodology" onclick="toggleMobileMenu()">
                 Methodology
-                <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                <svg class="icon-symbol">
+                    <use href="assets/img/sprite.svg#chevron_right"></use>
+                </svg>
             </a>
 
             <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
@@ -465,7 +482,7 @@
             <div class="relative z-10 animate-on-scroll fade-left">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold mb-6">
-                    <svg class=" text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <svg class=" text-sm icon-symbol">
                         <use href="assets/img/sprite.svg#verified"></use>
                     </svg>
                     UPDATED MARCH 2026
@@ -505,7 +522,7 @@
                 <div
                     class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-4 glass-card bounce-effect">
                     <div class="bg-green-100 p-3 rounded-full text-green-600">
-                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" icon-symbol">
                             <use href="assets/img/sprite.svg#payments"></use>
                         </svg>
                     </div>
@@ -538,7 +555,7 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.9</span>
-                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" fill-1 text-sm icon-symbol">
                                 <use href="assets/img/sprite.svg#star"></use>
                             </svg>
                         </div>
@@ -557,13 +574,25 @@
                             </div>
                         </div>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 AI-powered claim settlement</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> 10%
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> 10%
                                 multi-pet discount</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 Preventative care add-ons</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 High-rated mobile app</li>
                         </ul>
                     </div>
@@ -585,7 +614,7 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.7</span>
-                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" fill-1 text-sm icon-symbol">
                                 <use href="assets/img/sprite.svg#star"></use>
                             </svg>
                         </div>
@@ -604,13 +633,25 @@
                             </div>
                         </div>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> Direct
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> Direct
                                 payment to vets</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> No
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> No
                                 upper age limits</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 Comprehensive coverage</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> 24/7
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> 24/7
                                 Helpline included</li>
                         </ul>
                     </div>
@@ -632,7 +673,7 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.7</span>
-                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" fill-1 text-sm icon-symbol">
                                 <use href="assets/img/sprite.svg#star"></use>
                             </svg>
                         </div>
@@ -651,13 +692,25 @@
                             </div>
                         </div>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 Budget-friendly premiums</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg>
                                 Flexible deductible choice</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> Fast
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> Fast
                                 digital claims</li>
-                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> No
+                            <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                    class="icon-symbol">
+                                    <use href="assets/img/sprite.svg#check_circle"></use>
+                                </svg> No
                                 enrollment fees</li>
                         </ul>
                     </div>
@@ -681,7 +734,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -700,13 +753,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Customizable accident &amp; illness plans</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Optional wellness add-ons</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Freedom to use any licensed vet</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Backed by ASPCA’s trusted legacy</li>
                             </ul>
                         </div>
@@ -728,7 +793,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -747,13 +812,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Preventive wellness plans available</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> Use
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg> Use
                                     any licensed vet in U.S./Canada</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Streamlined digital claims</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Fully customizable coverage</li>
                             </ul>
                         </div>
@@ -775,7 +852,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -794,13 +871,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Shrinking “Healthy Pet” deductible</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Covers hereditary conditions</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Includes dental illness protection</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Tailor coverage to your pet’s needs</li>
                             </ul>
                         </div>
@@ -822,7 +911,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.4</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -841,13 +930,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     24/7 Live Vet chat support</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Cloud-based records management</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Lost-pet alerts through Smart Tag</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Fast, mobile-first reimbursements</li>
                             </ul>
                         </div>
@@ -869,7 +970,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.4</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -888,13 +989,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Exam fees included for covered visits</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Physical therapy &amp; rx diets covered</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Short waits on knees and hips</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> No
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg> No
                                     breed or age exclusions</li>
                             </ul>
                         </div>
@@ -916,7 +1029,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.1</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -935,13 +1048,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Family plan for multiple pets</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> Use
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg> Use
                                     any licensed vet, nationwide</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Adjustable annual limits</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Employer/Military discounts</li>
                             </ul>
                         </div>
@@ -964,7 +1089,7 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.0</span>
-                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <svg class=" fill-1 text-sm icon-symbol">
                                     <use href="assets/img/sprite.svg#star"></use>
                                 </svg>
                             </div>
@@ -983,13 +1108,25 @@
                                 </div>
                             </div>
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Unlimited lifetime coverage, no caps</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> One
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg> One
                                     easy, all-in-one plan</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg>
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg>
                                     Claims processed in 2 days</li>
-                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check_circle"></use></svg> Up
+                                <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400"><svg
+                                        class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check_circle"></use>
+                                    </svg> Up
                                     to 90% reimbursement available</li>
                             </ul>
                         </div>
@@ -1017,7 +1154,7 @@
                     <h3 class="text-2xl font-bold mt-12 mb-4">What to Know About Pet Insurance</h3>
                     <div class="grid md:grid-cols-3 gap-8 my-8 animate-on-scroll" data-stagger="true">
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" text-primary mb-2 icon-symbol">
                                 <use href="assets/img/sprite.svg#replay"></use>
                             </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Reimbursement</h4>
@@ -1025,7 +1162,7 @@
                                 you back (usually 70-90%).</p>
                         </div>
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" text-primary mb-2 icon-symbol">
                                 <use href="assets/img/sprite.svg#history"></use>
                             </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Pre-existing</h4>
@@ -1033,7 +1170,7 @@
                                 policy began. Enrollment timing is key.</p>
                         </div>
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <svg class=" text-primary mb-2 icon-symbol">
                                 <use href="assets/img/sprite.svg#schedule"></use>
                             </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Waiting Periods</h4>
@@ -1053,7 +1190,7 @@
                 <!-- Comparison Table 1 -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-primary flex items-center gap-2">
-                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" icon-symbol">
                             <use href="assets/img/sprite.svg#analytics"></use>
                         </svg> Plan Type vs Coverage
                     </h3>
@@ -1092,7 +1229,7 @@
                 <!-- Comparison Table 2 -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-primary flex items-center gap-2">
-                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" icon-symbol">
                             <use href="assets/img/sprite.svg#balance"></use>
                         </svg> Deductible Strategy
                     </h3>
@@ -1255,73 +1392,111 @@
                         <tbody class="divide-y-0">
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">ASPCA</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                                 <td class="text-center"><span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Add-on</span>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">Pets Best</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                                 <td class="text-center"><span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Add-on</span>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">Lemonade</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#close"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#close"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#close"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#close"></use>
+                                    </svg>
                                 </td>
                                 <td class="text-center"><span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Add-on</span>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">Spot</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">Embrace</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                                 <td class="text-center"><span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Add-on</span>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="font-semibold text-left text-slate-900 dark:text-white">Figo</td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#close"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#close"></use>
+                                    </svg>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                                 <td class="text-center"><span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">Add-on</span>
                                 </td>
-                                <td class="text-center"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#check"></use></svg>
+                                <td class="text-center"><svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#check"></use>
+                                    </svg>
                                 </td>
                             </tr>
                         </tbody>
@@ -1429,7 +1604,7 @@
                             <div class="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-green-600 mb-4">
-                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                        <svg class=" icon-symbol">
                                             <use href="assets/img/sprite.svg#add_circle"></use>
                                         </svg> Pros
                                     </h4>
@@ -1442,7 +1617,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-red-600 mb-4">
-                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                        <svg class=" icon-symbol">
                                             <use href="assets/img/sprite.svg#do_not_disturb_on"></use>
                                         </svg> Cons
                                     </h4>
@@ -1480,7 +1655,7 @@
                             <div class="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-green-600 mb-4">
-                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                        <svg class=" icon-symbol">
                                             <use href="assets/img/sprite.svg#add_circle"></use>
                                         </svg> Pros
                                     </h4>
@@ -1492,7 +1667,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-red-600 mb-4">
-                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                        <svg class=" icon-symbol">
                                             <use href="assets/img/sprite.svg#do_not_disturb_on"></use>
                                         </svg> Cons
                                     </h4>
@@ -1528,7 +1703,7 @@
             <div class="grid lg:grid-cols-3 gap-12 mb-20 animate-on-scroll" data-stagger="true">
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                        <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" text-primary text-3xl icon-symbol">
                             <use href="assets/img/sprite.svg#price_check"></use>
                         </svg>
                     </div>
@@ -1538,7 +1713,7 @@
                 </div>
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
-                        <svg class=" text-blue-500 text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" text-blue-500 text-3xl icon-symbol">
                             <use href="assets/img/sprite.svg#security"></use>
                         </svg>
                     </div>
@@ -1548,7 +1723,7 @@
                 </div>
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
-                        <svg class=" text-purple-500 text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" text-purple-500 text-3xl icon-symbol">
                             <use href="assets/img/sprite.svg#bolt"></use>
                         </svg>
                     </div>
@@ -1654,7 +1829,9 @@
                                         <p class="font-bold text-slate-900 dark:text-white text-sm">Cost & Value</p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">25% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-slate-800/20 border border-white/10 hover:border-blue-500/30 transition-all cursor-pointer group"
                                     onclick="updateWeightingDetail('Coverage &amp; Benefits', 'Weight: 25%. Evaluation of core policy breadth including dental and hereditary conditions.', '#3b82f6')"
@@ -1667,7 +1844,9 @@
                                         <p class="font-bold text-slate-900 dark:text-white text-sm">Coverage</p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">25% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-slate-800/20 border border-white/10 hover:border-green-500/30 transition-all cursor-pointer group"
                                     onclick="updateWeightingDetail('Policy Terms', 'Weight: 15%. Direct analysis of waiting periods, enrollment age limits, and bilateral exclusions.', '#10b981')"
@@ -1680,7 +1859,9 @@
                                         <p class="font-bold text-slate-900 dark:text-white text-sm">Policy Terms</p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">15% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-slate-800/20 border border-white/10 hover:border-purple-500/30 transition-all cursor-pointer group"
                                     onclick="updateWeightingDetail('Claims &amp; Satisfaction', 'Weight: 20%. Speed of reimbursement and verified customer satisfaction ratings.', '#8b5cf6')"
@@ -1694,7 +1875,9 @@
                                         </p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">20% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-slate-800/20 border border-white/10 hover:border-yellow-500/30 transition-all cursor-pointer group"
                                     onclick="updateWeightingDetail('Tech &amp; UX', 'Weight: 10%. Ease of use for mobile apps, AI-driven claims, and digital management tools.', '#f59e0b')"
@@ -1707,7 +1890,9 @@
                                         <p class="font-bold text-slate-900 dark:text-white text-sm">Tech & UX</p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">10% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/30 dark:bg-slate-800/20 border border-white/10 hover:border-rose-500/30 transition-all cursor-pointer group"
                                     onclick="updateWeightingDetail('Long-Term Value', 'Weight: 5%. Historical premium stability and senior pet renewal terms.', '#f43f5e')"
@@ -1720,7 +1905,9 @@
                                         <p class="font-bold text-slate-900 dark:text-white text-sm">Long-Term Value</p>
                                         <p class="text-[10px] text-slate-500 uppercase font-black">5% Weight</p>
                                     </div>
-                                    <svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#chevron_right"></use></svg>
+                                    <svg class="icon-symbol">
+                                        <use href="assets/img/sprite.svg#chevron_right"></use>
+                                    </svg>
                                 </div>
                             </div>
 
@@ -1779,7 +1966,7 @@
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
-                        <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <svg class=" text-primary text-3xl icon-symbol">
                             <use href="assets/img/sprite.svg#pets"></use>
                         </svg>
                         <span class="text-xl font-extrabold tracking-tight text-white uppercase">PetPlanHero</span>
@@ -1789,9 +1976,15 @@
                         denied care due to cost.
                     </p>
                     <div class="flex gap-4">
-                        <a class="hover:text-primary transition-colors" href="#"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#social_leaderboard"></use></svg></a>
-                        <a class="hover:text-primary transition-colors" href="#"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#share"></use></svg></a>
-                        <a class="hover:text-primary transition-colors" href="#"><svg class="fill-current w-[1em] h-[1em] inline-block align-middle"><use href="assets/img/sprite.svg#link"></use></svg></a>
+                        <a class="hover:text-primary transition-colors" href="#"><svg class="icon-symbol">
+                                <use href="assets/img/sprite.svg#social_leaderboard"></use>
+                            </svg></a>
+                        <a class="hover:text-primary transition-colors" href="#"><svg class="icon-symbol">
+                                <use href="assets/img/sprite.svg#share"></use>
+                            </svg></a>
+                        <a class="hover:text-primary transition-colors" href="#"><svg class="icon-symbol">
+                                <use href="assets/img/sprite.svg#link"></use>
+                            </svg></a>
                     </div>
                 </div>
                 <div>
