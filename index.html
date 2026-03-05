@@ -224,26 +224,25 @@
 
         .custom-scroll-wrap {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            padding-left: 110px;
-            /* Offset for the sticky column */
-            margin-top: 6px;
-            gap: 12px;
+            justify-content: center;
+            margin-top: 12px;
+            gap: 6px;
             opacity: 1;
-            transition: opacity 0.3s ease;
         }
 
         .custom-scrollbar-track {
-            flex-grow: 1;
-            height: 6px;
-            background: rgba(0, 0, 0, 0.05);
+            width: 80px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: relative;
             cursor: pointer;
         }
 
         .dark .custom-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .custom-scrollbar-thumb {
@@ -253,7 +252,7 @@
             height: 100%;
             background: rgba(236, 91, 19, 0.45);
             border-radius: 10px;
-            transition: background 0.2s, width 0.1s;
+            transition: background 0.2s;
         }
 
         .custom-scrollbar-thumb:hover {
@@ -2235,14 +2234,6 @@
                     const scrollPercentage = container.scrollLeft / (scrollWidth - clientWidth);
                     const maxThumbLeft = track.clientWidth - thumbWidth;
                     thumb.style.left = `${scrollPercentage * maxThumbLeft}px`;
-
-                    if (container.scrollLeft > 10) {
-                        hint.style.opacity = '0';
-                        hint.style.width = '0px';
-                        hint.style.overflow = 'hidden';
-                    } else {
-                        hint.style.opacity = '1';
-                    }
                 };
 
                 container.addEventListener('scroll', updateScrollUI, { passive: true });
