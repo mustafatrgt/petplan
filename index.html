@@ -209,40 +209,55 @@
             background: rgba(255, 255, 255, 0.06) !important;
         }
 
+        /* Unified Custom Scrollbar wrapper */
         .modern-table-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             position: relative;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(236, 91, 19, 0.45) transparent;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
-        /* Custom Scrollbar for all devices (offset to start after sticky column ~110px) */
         .modern-table-container::-webkit-scrollbar {
-            height: 15px;
-            /* Needs to be larger to accommodate the top border */
+            display: none;
         }
 
-        .modern-table-container::-webkit-scrollbar-track {
-            background: transparent;
-            /* Use a massive transparent left border to push the track to the right */
-            border-left: 110px solid transparent;
-            /* Adds a small spacer so thumb doesn't touch the table completely */
-            border-top: 10px solid transparent;
-            background-clip: padding-box;
+        .custom-scroll-wrap {
+            display: flex;
+            align-items: center;
+            padding-left: 110px;
+            /* Offset for the sticky column */
+            margin-top: 6px;
+            gap: 12px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
         }
 
-        .modern-table-container::-webkit-scrollbar-thumb {
-            background-color: rgba(236, 91, 19, 0.45);
-            /* Match the track's push */
-            border-left: 110px solid transparent;
-            border-top: 10px solid transparent;
-            border-radius: 99px;
-            background-clip: padding-box;
+        .custom-scrollbar-track {
+            flex-grow: 1;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
         }
 
-        .modern-table-container::-webkit-scrollbar-thumb:hover {
-            background-color: rgba(236, 91, 19, 0.7);
+        .dark .custom-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(236, 91, 19, 0.45);
+            border-radius: 10px;
+            transition: background 0.2s, width 0.1s;
+        }
+
+        .custom-scrollbar-thumb:hover {
+            background: rgba(236, 91, 19, 0.7);
         }
 
         .table-scroll-hint {
@@ -252,18 +267,13 @@
             font-size: 0.7rem;
             font-weight: 500;
             color: rgba(0, 0, 0, 0.45);
-            padding: 8px 12px 4px;
-            /* Default left-aligned padding */
             line-height: 1;
-            transition: opacity 0.3s ease;
+            white-space: nowrap;
+            transition: opacity 0.3s;
         }
 
         .dark .table-scroll-hint {
             color: rgba(255, 255, 255, 0.3);
-        }
-
-        .modern-table-container.scrolled-end+.table-scroll-hint {
-            opacity: 0;
         }
 
         .btn-hover:hover {
@@ -2181,33 +2191,111 @@
             });
         }, observerOptions);
 
-        // Table Scroll Hints
+        // Custom JS Scrollbar Implementation
         function initTableScrollHints() {
             document.querySelectorAll('.modern-table-container').forEach(container => {
-                // Inject scroll hint below container
-                const hint = document.createElement('p');
+
+                const wrap = document.createElement('div');
+                wrap.className = 'custom-scroll-wrap';
+
+                const hint = document.createElement('div');
                 hint.className = 'table-scroll-hint';
                 hint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 9l-3 3 3 3"/><path d="M14 9l3 3-3 3"/><path d="M7 12h10"/></svg> Swipe to explore';
-                container.insertAdjacentElement('afterend', hint);
 
-                const updateGradient = () => {
-                    const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 4;
-                    container.classList.toggle('scrolled-end', atEnd);
-                    // Hide hint after first scroll
+                const track = document.createElement('div');
+                track.className = 'custom-scrollbar-track';
+
+                const thumb = document.createElement('div');
+                thumb.className = 'custom-scrollbar-thumb';
+
+                track.appendChild(thumb);
+                wrap.appendChild(hint);
+                wrap.appendChild(track);
+
+                container.insertAdjacentElement('afterend', wrap);
+
+                const updateScrollUI = () => {
+                    const scrollWidth = container.scrollWidth;
+                    const clientWidth = container.clientWidth;
+
+                    if (scrollWidth <= clientWidth) {
+                        wrap.style.display = 'none';
+                        return;
+                    } else {
+                        wrap.style.display = 'flex';
+                    }
+
+                    const visibleRatio = clientWidth / scrollWidth;
+                    const minThumbWidth = 30;
+                    let thumbWidth = Math.max(minThumbWidth, track.clientWidth * visibleRatio);
+
+                    if (thumbWidth > track.clientWidth) thumbWidth = track.clientWidth;
+                    thumb.style.width = `${thumbWidth}px`;
+
+                    const scrollPercentage = container.scrollLeft / (scrollWidth - clientWidth);
+                    const maxThumbLeft = track.clientWidth - thumbWidth;
+                    thumb.style.left = `${scrollPercentage * maxThumbLeft}px`;
+
                     if (container.scrollLeft > 10) {
                         hint.style.opacity = '0';
-                        hint.style.pointerEvents = 'none';
+                        hint.style.width = '0px';
+                        hint.style.overflow = 'hidden';
+                    } else {
+                        hint.style.opacity = '1';
                     }
                 };
 
-                container.addEventListener('scroll', updateGradient, { passive: true });
-                // Initial check - if not scrollable, hide gradient immediately
-                setTimeout(() => {
-                    if (container.scrollWidth <= container.clientWidth) {
-                        container.classList.add('scrolled-end');
-                        hint.style.display = 'none';
+                container.addEventListener('scroll', updateScrollUI, { passive: true });
+                window.addEventListener('resize', updateScrollUI);
+
+                // Track click scrolling
+                track.addEventListener('click', (e) => {
+                    if (e.target === thumb) return; // Ignore dragging
+                    const rect = track.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const scrollPercentage = clickX / track.clientWidth;
+                    const targetScroll = scrollPercentage * (container.scrollWidth - container.clientWidth);
+                    container.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                });
+
+                // Thumb drag scrolling
+                let isDragging = false;
+                let startX, startScrollLeft;
+
+                thumb.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.pageX;
+                    startScrollLeft = container.scrollLeft;
+                    document.body.style.userSelect = 'none';
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    const deltaX = e.pageX - startX;
+                    const maxThumbLeft = track.clientWidth - thumb.clientWidth;
+                    const scrollableWidth = container.scrollWidth - container.clientWidth;
+                    if (maxThumbLeft > 0) {
+                        const scrollRatio = deltaX / maxThumbLeft;
+                        container.scrollLeft = startScrollLeft + (scrollRatio * scrollableWidth);
                     }
-                }, 200);
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        document.body.style.userSelect = '';
+                    }
+                });
+
+                addEventListener("touchend", () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        document.body.style.userSelect = '';
+                    }
+                });
+
+                // Initial setup
+                setTimeout(updateScrollUI, 150);
             });
         }
 
