@@ -126,6 +126,11 @@
             z-index: 20;
             background: white;
             border-right: 1px solid rgba(0, 0, 0, 0.05);
+            min-width: 110px;
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .dark .modern-table th:first-child,
@@ -204,13 +209,43 @@
 
         .modern-table-container::after {
             content: '';
-            position: absolute;
+            position: sticky;
             top: 0;
             right: 0;
             bottom: 0;
-            width: 30px;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2));
+            flex-shrink: 0;
+            width: 48px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.85));
             pointer-events: none;
+            transition: opacity 0.25s ease;
+            opacity: 1;
+            margin-left: -48px;
+            z-index: 10;
+        }
+
+        .dark .modern-table-container::after {
+            background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.85));
+        }
+
+        .modern-table-container.scrolled-end::after {
+            opacity: 0;
+        }
+
+        .table-scroll-hint {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.65rem;
+            color: rgba(0, 0, 0, 0.35);
+            padding: 4px 12px 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark .table-scroll-hint {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .modern-table-container.scrolled-end+.table-scroll-hint {
             opacity: 0;
         }
 
@@ -2129,8 +2164,39 @@
             });
         }, observerOptions);
 
+        // Table Scroll Hints
+        function initTableScrollHints() {
+            document.querySelectorAll('.modern-table-container').forEach(container => {
+                // Inject scroll hint below container
+                const hint = document.createElement('p');
+                hint.className = 'table-scroll-hint';
+                hint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Kaydırın';
+                container.insertAdjacentElement('afterend', hint);
+
+                const updateGradient = () => {
+                    const atEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 4;
+                    container.classList.toggle('scrolled-end', atEnd);
+                    // Hide hint after first scroll
+                    if (container.scrollLeft > 10) {
+                        hint.style.opacity = '0';
+                        hint.style.pointerEvents = 'none';
+                    }
+                };
+
+                container.addEventListener('scroll', updateGradient, { passive: true });
+                // Initial check - if not scrollable, hide gradient immediately
+                setTimeout(() => {
+                    if (container.scrollWidth <= container.clientWidth) {
+                        container.classList.add('scrolled-end');
+                        hint.style.display = 'none';
+                    }
+                }, 200);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+            initTableScrollHints();
         });
     </script>
 </body>
