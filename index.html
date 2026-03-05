@@ -201,16 +201,29 @@
             -webkit-overflow-scrolling: touch;
             position: relative;
             scrollbar-width: thin;
-            scrollbar-color: rgba(236, 91, 19, 0.4) transparent;
+            scrollbar-color: rgba(236, 91, 19, 0.45) transparent;
         }
 
+        /* Scrollbar track: offset to start after sticky column (~110px) */
         .modern-table-container::-webkit-scrollbar {
-            height: 6px;
+            height: 5px;
+        }
+
+        .modern-table-container::-webkit-scrollbar-track {
+            background: transparent;
+            margin-left: 110px;
+            /* match sticky column min-width */
+            border-radius: 99px;
         }
 
         .modern-table-container::-webkit-scrollbar-thumb {
-            background-color: rgba(236, 91, 19, 0.4);
-            border-radius: 10px;
+            background-color: rgba(236, 91, 19, 0.45);
+            border-radius: 99px;
+            border: 1px solid transparent;
+        }
+
+        .modern-table-container::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(236, 91, 19, 0.7);
         }
 
         .modern-table-container::after {
@@ -240,10 +253,13 @@
         .table-scroll-hint {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
             font-size: 0.65rem;
             color: rgba(0, 0, 0, 0.35);
-            padding: 4px 12px 0;
+            padding: 2px 0 0 110px;
+            /* align with scrollbar start */
+            margin-top: -2px;
+            /* sit tight to table */
             transition: opacity 0.3s ease;
         }
 
@@ -2176,7 +2192,7 @@
                 // Inject scroll hint below container
                 const hint = document.createElement('p');
                 hint.className = 'table-scroll-hint';
-                hint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Kaydırın';
+                hint.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M14.59 10.42c-.31-.31-.72-.42-1.09-.42-.19 0-.38.04-.55.11L9 8.5V4c0-.83-.67-1.5-1.5-1.5S6 3.17 6 4v9.61l-1.81-1.81c-.28-.29-.67-.44-1.07-.44-.78 0-1.43.61-1.43 1.43 0 .38.15.75.44 1.02l3.5 3.61c.51.51 1.19.79 1.92.79 1.73 1.15 3.35 1.79 4.69 1.79 2.76 0 5-2.24 5-5v-2.51c0-.41-.17-.8-.45-1.07zM9.5 18c-.96 0-1.85-.38-2.53-1L4 13.97V12l2 2v-2h1v-1.45l1 .55V18h1.5c.28 0 .5-.22.5-.5V14h1v3.62c-.15.24-.5.38-.5.38zM15 17.58C14.23 18 13.37 18 12.5 18H12v-4h1v-2h1v2h1v-1.18l.94.52c.04.21.06.42.06.66 0 .62-.35 1.18-.94 1.58z" opacity=".3"/><path d="M15.55 10.07L13 8.59V5c0-1.1-.9-2-2-2s-2 .9-2 2v6.59l-1.3-1.3c-.39-.39-1.02-.39-1.42.01-.38.4-.38 1.03.01 1.42l3.09 3.09c.47.47 1.11.74 1.79.74h2.77C15.22 15.55 16 14.77 16 14v-2.51c0-.62-.35-1.18-.9-1.42zM14 14l-2.83-.01c-.24 0-.47-.1-.64-.27L9 12.19V5h2v4.45l3 1.67V14z"/></svg> Swipe to explore';
                 container.insertAdjacentElement('afterend', hint);
 
                 const updateGradient = () => {
