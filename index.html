@@ -172,8 +172,21 @@
         .modern-table td {
             text-align: left;
             padding: 1.5rem 1.5rem;
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.03);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.04);
+            border-right: 0.5px solid rgba(0, 0, 0, 0.06);
             transition: background 0.2s ease;
+        }
+
+        .modern-table td:last-child {
+            border-right: none;
+        }
+
+        .modern-table th {
+            border-right: 0.5px solid rgba(236, 91, 19, 0.12);
+        }
+
+        .modern-table th:last-child {
+            border-right: none;
         }
 
         .dark .modern-table td {
@@ -255,11 +268,10 @@
             align-items: center;
             gap: 5px;
             font-size: 0.65rem;
-            color: rgba(0, 0, 0, 0.35);
-            padding: 2px 0 0 110px;
-            /* align with scrollbar start */
-            margin-top: -2px;
-            /* sit tight to table */
+            color: rgba(0, 0, 0, 0.3);
+            padding: 0 0 0 110px;
+            margin-top: -5px;
+            line-height: 1;
             transition: opacity 0.3s ease;
         }
 
