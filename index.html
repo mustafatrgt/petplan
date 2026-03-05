@@ -10,7 +10,7 @@
     <link rel="preload" as="image" href="assets/img/hero-dogs.avif" fetchpriority="high">
     <script src="assets/js/tailwind.min.js"></script>
     <link href="assets/fonts/plus-jakarta-sans.css" rel="stylesheet" />
-    <link href="assets/fonts/material-symbols.css" rel="stylesheet" />
+    <link href="assets/fonts/plus-jakarta-sans.css" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -357,7 +357,9 @@
         class="sticky top-0 z-50 bg-white/70 dark:bg-background-dark/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 glass-card">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+                <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <use href="assets/img/sprite.svg#pets"></use>
+                </svg>
                 <span
                     class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">PetPlanHero</span>
             </div>
@@ -373,15 +375,22 @@
                 <button
                     class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mr-2 flex items-center justify-center btn-hover transition-all"
                     onclick="document.documentElement.classList.toggle('dark')">
-                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
-                    <span class="material-symbols-outlined hidden dark:block text-yellow-400">light_mode</span>
+                    <svg class=" dark:hidden fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <use href="assets/img/sprite.svg#dark_mode"></use>
+                    </svg>
+                    <svg
+                        class=" hidden dark:block text-yellow-400 fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <use href="assets/img/sprite.svg#light_mode"></use>
+                    </svg>
                 </button>
                 <button
                     class="hidden sm:block bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition-opacity btn-hover transition-all">
                     Compare Plans
                 </button>
                 <button class="ml-4 md:hidden p-2 text-slate-900 dark:text-white" onclick="toggleMobileMenu()">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
+                    <svg class=" text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <use href="assets/img/sprite.svg#menu"></use>
+                    </svg>
                 </button>
             </div>
         </div>
@@ -394,14 +403,18 @@
         class="fixed right-0 top-0 bottom-0 w-[300px] z-[100] bg-white dark:bg-slate-900 p-8 md:hidden flex flex-col shadow-2xl overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
             <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+                <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <use href="assets/img/sprite.svg#pets"></use>
+                </svg>
                 <span
                     class="text-xl font-extrabold tracking-tight uppercase text-slate-900 dark:text-white">PetPlanHero</span>
             </div>
             <button
                 class="p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
                 onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined text-3xl">close</span>
+                <svg class=" text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                    <use href="assets/img/sprite.svg#close"></use>
+                </svg>
             </button>
         </div>
         <nav class="flex flex-col gap-2">
@@ -456,7 +469,9 @@
             <div class="relative z-10 animate-on-scroll fade-left">
                 <div
                     class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold mb-6">
-                    <span class="material-symbols-outlined text-sm">verified</span>
+                    <svg class=" text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                        <use href="assets/img/sprite.svg#verified"></use>
+                    </svg>
                     UPDATED MARCH 2026
                 </div>
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
@@ -494,7 +509,9 @@
                 <div
                     class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-4 glass-card bounce-effect">
                     <div class="bg-green-100 p-3 rounded-full text-green-600">
-                        <span class="material-symbols-outlined">payments</span>
+                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#payments"></use>
+                        </svg>
                     </div>
                     <div>
                         <p class="text-sm font-bold">Save up to 40%</p>
@@ -525,7 +542,9 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.9</span>
-                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#star"></use>
+                            </svg>
                         </div>
                     </div>
                     <div class="flex-1 space-y-4">
@@ -574,7 +593,9 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.7</span>
-                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#star"></use>
+                            </svg>
                         </div>
                     </div>
                     <div class="flex-1 space-y-4">
@@ -623,7 +644,9 @@
                         </div>
                         <div class="flex items-center gap-1 text-primary">
                             <span class="text-sm font-bold">4.7</span>
-                            <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                            <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#star"></use>
+                            </svg>
                         </div>
                     </div>
                     <div class="flex-1 space-y-4">
@@ -674,7 +697,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -723,7 +748,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -772,7 +799,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.6</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -821,7 +850,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.4</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -870,7 +901,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.4</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -919,7 +952,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.1</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -969,7 +1004,9 @@
                             </div>
                             <div class="flex items-center gap-1 text-primary">
                                 <span class="text-sm font-bold">4.0</span>
-                                <span class="material-symbols-outlined fill-1 text-sm">star</span>
+                                <svg class=" fill-1 text-sm fill-current w-[1em] h-[1em] inline-block align-middle">
+                                    <use href="assets/img/sprite.svg#star"></use>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex-1 space-y-4">
@@ -1024,19 +1061,25 @@
                     <h3 class="text-2xl font-bold mt-12 mb-4">What to Know About Pet Insurance</h3>
                     <div class="grid md:grid-cols-3 gap-8 my-8 animate-on-scroll" data-stagger="true">
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <span class="material-symbols-outlined text-primary mb-2">replay</span>
+                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#replay"></use>
+                            </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Reimbursement</h4>
                             <p class="text-xs text-slate-500">You pay the vet upfront, and the insurance company pays
                                 you back (usually 70-90%).</p>
                         </div>
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <span class="material-symbols-outlined text-primary mb-2">history</span>
+                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#history"></use>
+                            </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Pre-existing</h4>
                             <p class="text-xs text-slate-500">Almost no plan covers conditions that started before your
                                 policy began. Enrollment timing is key.</p>
                         </div>
                         <div class="p-4 dark:bg-slate-800 rounded-xl glass-card">
-                            <span class="material-symbols-outlined text-primary mb-2">schedule</span>
+                            <svg class=" text-primary mb-2 fill-current w-[1em] h-[1em] inline-block align-middle">
+                                <use href="assets/img/sprite.svg#schedule"></use>
+                            </svg>
                             <h4 class="font-bold mb-2 text-sm uppercase">Waiting Periods</h4>
                             <p class="text-xs text-slate-500">Policies aren't active instantly. Accidents typically have
                                 2-3 day waits; illnesses 14 days.</p>
@@ -1054,7 +1097,9 @@
                 <!-- Comparison Table 1 -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-primary flex items-center gap-2">
-                        <span class="material-symbols-outlined">analytics</span> Plan Type vs Coverage
+                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#analytics"></use>
+                        </svg> Plan Type vs Coverage
                     </h3>
                     <div class="modern-table-container glass-card rounded-2xl border border-white/20">
                         <table class="modern-table">
@@ -1091,7 +1136,9 @@
                 <!-- Comparison Table 2 -->
                 <div class="space-y-6">
                     <h3 class="text-xl font-bold text-primary flex items-center gap-2">
-                        <span class="material-symbols-outlined">balance</span> Deductible Strategy
+                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#balance"></use>
+                        </svg> Deductible Strategy
                     </h3>
                     <div class="modern-table-container glass-card rounded-2xl border border-white/20">
                         <table class="modern-table">
@@ -1445,7 +1492,9 @@
                             <div class="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-green-600 mb-4">
-                                        <span class="material-symbols-outlined">add_circle</span> Pros
+                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                            <use href="assets/img/sprite.svg#add_circle"></use>
+                                        </svg> Pros
                                     </h4>
                                     <ul class="space-y-2 text-sm">
                                         <li>• Extremely fast claim payment</li>
@@ -1456,7 +1505,9 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-red-600 mb-4">
-                                        <span class="material-symbols-outlined">do_not_disturb_on</span> Cons
+                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                            <use href="assets/img/sprite.svg#do_not_disturb_on"></use>
+                                        </svg> Cons
                                     </h4>
                                     <ul class="space-y-2 text-sm">
                                         <li>• Not available in all 50 states</li>
@@ -1492,7 +1543,9 @@
                             <div class="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-green-600 mb-4">
-                                        <span class="material-symbols-outlined">add_circle</span> Pros
+                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                            <use href="assets/img/sprite.svg#add_circle"></use>
+                                        </svg> Pros
                                     </h4>
                                     <ul class="space-y-2 text-sm">
                                         <li>• Direct payment to vets available</li>
@@ -1502,7 +1555,9 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold flex items-center gap-2 text-red-600 mb-4">
-                                        <span class="material-symbols-outlined">do_not_disturb_on</span> Cons
+                                        <svg class=" fill-current w-[1em] h-[1em] inline-block align-middle">
+                                            <use href="assets/img/sprite.svg#do_not_disturb_on"></use>
+                                        </svg> Cons
                                     </h4>
                                     <ul class="space-y-2 text-sm">
                                         <li>• Exams fees coverage is optional</li>
@@ -1536,7 +1591,9 @@
             <div class="grid lg:grid-cols-3 gap-12 mb-20 animate-on-scroll" data-stagger="true">
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">price_check</span>
+                        <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#price_check"></use>
+                        </svg>
                     </div>
                     <h4 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">Pricing Analysis</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">We analyze over 100 sample quotes per provider,
@@ -1544,7 +1601,9 @@
                 </div>
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-blue-500 text-3xl">security</span>
+                        <svg class=" text-blue-500 text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#security"></use>
+                        </svg>
                     </div>
                     <h4 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">Coverage Breadth</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">Beyond basic accident & illness, we score depth in
@@ -1552,7 +1611,9 @@
                 </div>
                 <div class="p-8 rounded-[2rem] bg-white/40 dark:bg-slate-800/40 border border-white/20 glass-card">
                     <div class="size-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-purple-500 text-3xl">bolt</span>
+                        <svg class=" text-purple-500 text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#bolt"></use>
+                        </svg>
                     </div>
                     <h4 class="font-bold text-xl mb-4 text-slate-900 dark:text-white">Claims Experience</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">We monitor average reimbursement speeds and mobile
@@ -1787,7 +1848,9 @@
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">pets</span>
+                        <svg class=" text-primary text-3xl fill-current w-[1em] h-[1em] inline-block align-middle">
+                            <use href="assets/img/sprite.svg#pets"></use>
+                        </svg>
                         <span class="text-xl font-extrabold tracking-tight text-white uppercase">PetPlanHero</span>
                     </div>
                     <p class="max-w-xs text-sm leading-relaxed mb-6">
